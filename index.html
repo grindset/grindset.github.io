@@ -29,15 +29,16 @@
         }
     </style>
     <script>
-    document.addEventListener('click', play);
+    document.querySelector('audio').volume = 0.5;
     function play() {
         document.querySelector('audio').play();
         document.removeEventListener('click', play);
     }
+    document.addEventListener('click', play);
     </script>
 </head>
 <body>
-    <audio loop autoplay>
+    <audio loop autoplay controls>
         <source src="/grindset.mp3" type="audio/mpeg">
     </audio>
     <h1>IF YOU'RE 20-30</h1>
