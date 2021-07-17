@@ -1,2 +1,0 @@
-# grindset.github.io
-#upyourgrindset
