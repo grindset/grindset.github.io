@@ -22,14 +22,24 @@
             font-size: 2em;
             margin: 0.67em 0;
         }
+        .accent {
+            color: #b90e0a;
+        }
+        #music-hint {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            color: gray;
+        }
     </style>
     <script>
     function autorun() {
-        var audio = document.querySelector('audio')
+        var audio = document.getElementById('music');
         audio.volume = 0.25;
         function play() {
             audio.play();
             document.removeEventListener('click', play);
+            document.getElementById('music-hint').style = 'display:none';
         }
         document.addEventListener('click', play);
     }
@@ -39,17 +49,20 @@
     </script>
 </head>
 <body>
-    <audio loop autoplay>
+    <div>
+        <h1>IF YOU'RE 20-30</h1>
+        <h3>and your main circle isn't <span class="accent">discussing</span>:</h3>
+        <h3><span class="accent">-</span> Opening businesses</h3>
+        <h3><span class="accent">-</span> Investing</h3>
+        <h3><span class="accent">-</span> Escaping the 9-5</h3>
+        <h3><span class="accent">-</span> Fitness</h3>
+        <h3><span class="accent">-</span> Self development</h3>
+        <h3>Then it's time to find a new circle.</h3>
+        <h3>Your <span class="accent">NETWORK</span> is your <span class="accent">NET WORTH</span>!</h3>
+    </div>
+    <audio id="music" loop autoplay>
         <source src="/grindset.mp3" type="audio/mpeg">
     </audio>
-    <h1>IF YOU'RE 20-30</h1>
-    <h3>and your main circle isn't <span style="color:#b90e0a">discussing</span>:</h3>
-    <h3><span style="color:#b90e0a">-</span> Opening businesses</h3>
-    <h3><span style="color:#b90e0a">-</span> Investing</h3>
-    <h3><span style="color:#b90e0a">-</span> Escaping the 9-5</h3>
-    <h3><span style="color:#b90e0a">-</span> Fitness</h3>
-    <h3><span style="color:#b90e0a">-</span> Self development</h3>
-    <h3>Then it's time to find a new circle.</h3>
-    <h3>Your <span style="color:#b90e0a">NETWORK</span> is your <span style="color:#b90e0a">NET WORTH</span>!</h3>
+    <span id="music-hint">Click anywhere for music</span>
 </body>
 </html>
