@@ -29,12 +29,18 @@
         }
     </style>
     <script>
-    document.querySelector('audio').volume = 0.5;
-    function play() {
-        document.querySelector('audio').play();
-        document.removeEventListener('click', play);
+    function autorun() {
+        var audio = document.querySelector('audio')
+        audio.volume = 0.5;
+        function play() {
+            audio.play();
+            document.removeEventListener('click', play);
+        }
+        document.addEventListener('click', play);
     }
-    document.addEventListener('click', play);
+    if (document.addEventListener) document.addEventListener('DOMContentLoaded', autorun, false);
+    else if (document.attachEvent) document.attachEvent('onreadystatechange', autorun);
+    else window.onload = autorun;
     </script>
 </head>
 <body>
