@@ -12,11 +12,13 @@
             -webkit-text-size-adjust: 100%;
         }
         body {
+            margin: 0;
+        }
+        div {
             position: absolute;
             top: 50%;
             transform: translate(-50%, -50%);
             left: 50%;
-            margin: 0;
         }
         h1 {
             font-size: 2em;
@@ -49,6 +51,9 @@
     </script>
 </head>
 <body>
+    <audio id="music" loop autoplay>
+        <source src="/grindset.mp3" type="audio/mpeg">
+    </audio>
     <div>
         <h1>IF YOU'RE 20-30</h1>
         <h3>and your main circle isn't <span class="accent">discussing</span>:</h3>
@@ -60,9 +65,6 @@
         <h3>Then it's time to find a new circle.</h3>
         <h3>Your <span class="accent">NETWORK</span> is your <span class="accent">NET WORTH</span>!</h3>
     </div>
-    <audio id="music" loop autoplay>
-        <source src="/grindset.mp3" type="audio/mpeg">
-    </audio>
     <span id="music-hint">Click anywhere for music</span>
 </body>
 </html>
