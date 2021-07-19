@@ -20,13 +20,6 @@
         body {
             margin: 0;
         }
-        @media (prefers-color-scheme: dark) {
-            body {
-                background: black;
-                -webkit-filter: invert(100%);
-                filter: invert(100%);
-            }
-        }
         div {
             position: absolute;
             top: 50%;
@@ -41,16 +34,24 @@
             color: #b90e0a;
         }
         #github {
+            width: 48px;
             position: absolute;
             bottom: 15px;
-            left: 15px;
+            left: 25px;
         }
         #music-hint {
             position: absolute;
             bottom: 15px;
-            right: 15px;
+            right: 25px;
             color: gray;
             font-weight: bold;
+        }
+        @media (prefers-color-scheme: dark) {
+            body {
+                background: black;
+                -webkit-filter: invert(100%);
+                filter: invert(100%);
+            }
         }
     </style>
     <script>
