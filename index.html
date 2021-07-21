@@ -72,13 +72,13 @@
         var soundOn = document.getElementById('sound-on');
         soundOff.onclick = function() {
             audio.play();
-            soundOn.style = 'display:none';
-            soundOff.style = '';
+            soundOff.style = 'display:none';
+            soundOn.style = '';
         };
         soundOn.onclick = function() {
             audio.pause();
-            soundOff.style = 'display:none';
-            soundOn.style = '';
+            soundOn.style = 'display:none';
+            soundOff.style = '';
         };
     }
     if (document.addEventListener) document.addEventListener('DOMContentLoaded', autorun, false);
