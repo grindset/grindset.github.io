@@ -70,14 +70,12 @@
         var lightTheme = document.getElementById('light-theme');
         var darkTheme = document.getElementById('dark-theme');
         lightTheme.onclick = function() {
-            audio.play();
             lightTheme.style = 'display:none';
             darkTheme.style = '';
             document.body.setAttribute('theme', 'light');
             localStorage.setItem('theme', 'light');
         };
         darkTheme.onclick = function() {
-            audio.pause();
             darkTheme.style = 'display:none';
             lightTheme.style = '';
             document.body.setAttribute('theme', 'dark');
