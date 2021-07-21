@@ -111,14 +111,13 @@
             effects.append(effect);
             effectsArray.push({
                 element: effect,
-                position: 0,
+                time: Date.now(),
             });
         }, 1000);
         setInterval(function() {
             for (i = 0; i < effectsArray.length; ++i) {
                 var effect = effectsArray[i];
-                effect.position += 1;
-                effect.element.style.top = effect.position + '%';
+                effect.element.style.top = (Date.now() - effect.time) / 1000 + '%';
             }
         }, 0);
 
