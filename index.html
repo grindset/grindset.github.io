@@ -92,16 +92,19 @@
             darkTheme.onclick();
         }
         
+        var effects = document.getElementById("effects");
         var effectsOff = document.getElementById('effects-off');
         var effectsOn = document.getElementById('effects-on');
         effectsOff.onclick = function() {
             effectsOff.style = 'display:none';
             effectsOn.style = '';
+            effects.style = 'display:none';
             localStorage.setItem('effects', 'off');
         };
         effectsOn.onclick = function() {
             effectsOn.style = 'display:none';
             effectsOff.style = '';
+            effects.style = '';
             localStorage.setItem('effects', 'on');
         };
         if (localStorage.getItem('effects') == 'off') {
@@ -130,6 +133,9 @@
     <audio id="music" loop>
         <source src="/grindset.mp3" type="audio/mpeg">
     </audio>
+    <div id="effects">
+        
+    </div>
     <div>
         <h1>IF YOU'RE 20-30</h1>
         <h3>and your main circle isn't <span class="accent">discussing</span>:</h3>
