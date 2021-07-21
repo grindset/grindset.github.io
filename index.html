@@ -71,14 +71,14 @@
         var soundOff = document.getElementById('sound-off');
         var soundOn = document.getElementById('sound-on');
         soundOff.onclick = function() {
-            audio.pause();
-            soundOff.style = 'display:none';
-            soundOn.style = '';
-        };
-        soundOn.onclick = function() {
             audio.play();
             soundOn.style = 'display:none';
             soundOff.style = '';
+        };
+        soundOn.onclick = function() {
+            audio.pause();
+            soundOff.style = 'display:none';
+            soundOn.style = '';
         };
     }
     if (document.addEventListener) document.addEventListener('DOMContentLoaded', autorun, false);
