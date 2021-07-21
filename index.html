@@ -92,6 +92,22 @@
             darkTheme.onclick();
         }
         
+        var effectsOff = document.getElementById('effects-off');
+        var effectsOn = document.getElementById('effects-on');
+        effectsOff.onclick = function() {
+            effectsOff.style = 'display:none';
+            effectsOn.style = '';
+            localStorage.setItem('effects', 'off');
+        };
+        effectsOn.onclick = function() {
+            effectsOn.style = 'display:none';
+            effectsOff.style = '';
+            localStorage.setItem('effects', 'on');
+        };
+        if (localStorage.getItem('effects') == 'off') {
+            effectsOff.onclick();
+        }
+        
         var soundOff = document.getElementById('sound-off');
         var soundOn = document.getElementById('sound-on');
         soundOff.onclick = function() {
