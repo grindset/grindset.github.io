@@ -103,6 +103,9 @@
         var effects = document.getElementById('effects');
         var effectsArray = [];
         setInterval(function() {
+            if (effectsArray.lenght >= 1000) {
+                return;
+            }
             var effect = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
             effect.setAttributeNS(null, 'viewBox', '0 0 36 36');
             effect.classList.add('effect');
@@ -113,11 +116,15 @@
                 element: effect,
                 time: Date.now(),
             });
-        }, 100);
+        }, 250);
         setInterval(function() {
             for (i = 0; i < effectsArray.length; ++i) {
                 var effect = effectsArray[i];
-                effect.element.style.top = (Date.now() - effect.time) / 1000 + '%';
+                var position = (Date.now() - effect.time) / 500;
+                effect.element.style.top = position + '%';
+                if (position > 100) {
+                    effectsArray[i].time = Date.now();
+                }
             }
         }, 0);
 
