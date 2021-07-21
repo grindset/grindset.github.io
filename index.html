@@ -68,12 +68,18 @@
     function autorun() {
         var audio = document.getElementById('music');
         audio.volume = 0.25;
-        function play() {
+        var soundOn = document.getElementById('sound-on');
+        var soundOff = document.getElementById('sound-off');
+        soundOn.onclick = function() {
             audio.play();
-            document.removeEventListener('click', play);
-            document.getElementById('music-hint').style = 'display:none';
-        }
-        document.addEventListener('click', play);
+            soundOn.style = 'display:none';
+            soundOff.style = '';
+        };
+        soundOff.onclick = function() {
+            audio.pause();
+            soundOff.style = 'display:none';
+            soundOn.style = '';
+        };
     }
     if (document.addEventListener) document.addEventListener('DOMContentLoaded', autorun, false);
     else if (document.attachEvent) document.attachEvent('onreadystatechange', autorun);
