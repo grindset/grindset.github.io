@@ -156,7 +156,7 @@
         }
         
         var currentAudio = 0;
-        var volume = 0.25;
+        var volume = localStorage.getItem('volume') || 0.5;
         var soundOff = document.getElementById('sound-off');
         var soundOn = document.getElementById('sound-on');
         var volumeSlider = document.getElementById('volume');
@@ -176,6 +176,7 @@
         };
         volumeSlider.oninput = function() {
             document.getElementById('music' + currentAudio).volume = volume = volumeSlider.value;
+            localStorage.setItem('volume', volume);
         };
     }
     if (document.addEventListener) document.addEventListener('DOMContentLoaded', autorun, false);
