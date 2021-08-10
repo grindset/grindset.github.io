@@ -80,9 +80,6 @@
     </style>
     <script>
     function autorun() {
-        var audio = document.getElementById('music');
-        audio.volume = 0.25;
-        
         var darkTheme = document.getElementById('dark-theme');
         var lightTheme = document.getElementById('light-theme');
         darkTheme.onclick = function() {
@@ -149,15 +146,19 @@
             effectsOff.onclick();
         }
         
+        var currentAudio = 0;
         var soundOff = document.getElementById('sound-off');
         var soundOn = document.getElementById('sound-on');
         soundOff.onclick = function() {
+            var audio = document.getElementById('music' + currentAudio);
+            audio.volume = 0.25;
             audio.play();
             soundOff.style = 'display:none';
             soundOn.style = '';
         };
         soundOn.onclick = function() {
-            audio.pause();
+            document.getElementById('music' + currentAudio).pause();
+            currentAudio = (currentAudio + 1) % 2;
             soundOn.style = 'display:none';
             soundOff.style = '';
         };
@@ -170,6 +171,9 @@
 <body>
     <audio id="music" loop>
         <source src="/grindset.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="music2" loop>
+        <source src="/grindset2.mp3" type="audio/mpeg">
     </audio>
     <div id="effects"></div>
     <div id="content">
