@@ -83,12 +83,14 @@
             margin: 0;
             -webkit-appearance: slider-vertical;
         }
+        #dark-theme, #light-theme, #effects-off, #effects-on, #github, #sound-off, #sound-on {
+            transition: all 0.2s;
+        }
         #dark-theme:hover, #light-theme:hover, #effects-off:hover, #effects-on:hover, #github:hover, #sound-off:hover, #sound-on:hover {
             opacity: 0.75;
         }
         #dark-theme:hover:active, #light-theme:hover:active, #effects-off:hover:active, #effects-on:hover:active, #github:hover:active, #sound-off:hover:active, #sound-on:hover:active {
             transform: scale(0.75);
-            padding: 4px;
         }
     </style>
     <script>
